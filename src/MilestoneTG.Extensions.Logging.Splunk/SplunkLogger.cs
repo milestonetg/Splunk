@@ -186,7 +186,7 @@ namespace MilestoneTG.Extensions.Logging.Splunk
         /// <param name="state"></param>
         void FixData(Dictionary<string, object> splunkEvent, object state)
         {
-            if (state is FormattedLogValues formattedLogValues)
+            if (state is IReadOnlyList<KeyValuePair<string, object>> formattedLogValues)
             {
                 foreach (var kv in formattedLogValues)
                 {
@@ -200,7 +200,7 @@ namespace MilestoneTG.Extensions.Logging.Splunk
             {
                 if (data.ContainsKey("FormattedLogValues"))
                 {
-                    var flv = (FormattedLogValues)data["FormattedLogValues"];
+                    var flv = (IReadOnlyList<KeyValuePair<string, object>>)data["FormattedLogValues"];
                     foreach (var kv in flv)
                     {
                         if (kv.Key == "{OriginalFormat}")
