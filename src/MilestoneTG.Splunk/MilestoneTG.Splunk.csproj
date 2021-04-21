@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="'netStandard1.3'=='$(TargetFramework)'">
-    <PackageReference Include="System.Net.Http" Version="4.3.2" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
     <PackageReference Include="System.Diagnostics.TraceSource" Version="4.3.0" />
   </ItemGroup>
   <ItemGroup Condition="'net45'=='$(TargetFramework)'">
